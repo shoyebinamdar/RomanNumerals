@@ -125,6 +125,8 @@ public class NumberTest {
         assertEquals("CMLXXXVIII", n.convertToRoman(988));
         assertEquals("CMLXXI", n.convertToRoman(971));
         assertEquals("CMXCIX", n.convertToRoman(999));
+        assertEquals("M", n.convertToRoman(1000));
+        assertEquals("MI", n.convertToRoman(1001));
 
     }
 }
