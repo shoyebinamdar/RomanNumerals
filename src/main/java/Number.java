@@ -3,29 +3,33 @@ import java.util.*;
 public class Number {
 
     HashMap<Integer, String> romansMap;
-    List<Integer> exceptionalNumbers;
+
     public Number() {
         romansMap = new LinkedHashMap<>();
-        exceptionalNumbers = new ArrayList<>();
 
+        romansMap.put(1, "I");
         romansMap.put(5, "V");
         romansMap.put(10, "X");
         romansMap.put(50, "L");
-
-        exceptionalNumbers.add(49);
+        romansMap.put(100, "C");
+        romansMap.put(500, "D");
+        romansMap.put(1000, "M");
     }
 
     String convertToRoman(int n) {
         if (n <= 3)
-            return getStringNTimes("I", n);
+            return getStringNTimes(romansMap.get(1), n);
         else {
             if (romansMap.containsKey(n))
                 return romansMap.get(n);
 
-            if(romansMap.containsKey(n + 1) && !exceptionalNumbers.contains(n))
-                return convertToRoman(1) + convertToRoman(n + 1);
-            else if (romansMap.containsKey(n + 10))
-                return convertToRoman(10) + convertToRoman(n + 10);
+            int numberOfDigits = getNumberOfDigits(n);
+            int placeValueFactor = (int)Math.pow(10.0, (double)(numberOfDigits - 1));
+
+            if(romansMap.containsKey(n + placeValueFactor))
+                return convertToRoman(placeValueFactor) + convertToRoman(n + placeValueFactor);
+            else if(romansMap.containsKey(n - n % placeValueFactor + placeValueFactor))
+                return convertToRoman(n - n % placeValueFactor) + convertToRoman(n % placeValueFactor);
             else {
                 int nearestMax = getNearestMax(n);
                 if (n % nearestMax == 0)
@@ -34,6 +38,17 @@ public class Number {
                     return convertToRoman(n - (n % nearestMax)) + convertToRoman(n % nearestMax);
             }
         }
+    }
+
+    private int getNumberOfDigits(int n) {
+        int numberOfDigits = 0;
+
+        while (n != 0) {
+            n /= 10;
+            numberOfDigits++;
+        }
+
+        return numberOfDigits;
     }
 
     private int getNearestMax(int n) {
@@ -54,12 +69,6 @@ public class Number {
         return lastMax;
     }
     private String getStringNTimes(String str, int n) {
-        String appendedString = "";
-
-        for (int i = 0; i < n; i++) {
-            appendedString += str;
-        }
-
-        return appendedString;
+        return new String(new char[n]).replace("\0", str);
     }
 }

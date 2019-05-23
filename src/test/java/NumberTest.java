@@ -2,314 +2,129 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-// TODO correct expected and actual parameter order in assert
 public class NumberTest {
 
     @Test
     public void convertOneToRoman() {
         Number n = new Number();
-        String roman = n.convertToRoman(1);
-        assertEquals("I", roman);
-    }
 
-    @Test
-    public void convertTwoToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(2);
-        assertEquals("II", roman);
-    }
+        assertEquals("I", n.convertToRoman(1));
+        assertEquals("II", n.convertToRoman(2));
+        assertEquals("III", n.convertToRoman(3));
+        assertEquals("V", n.convertToRoman(5));
+        assertEquals("IV", n.convertToRoman(4));
+        assertEquals("VI", n.convertToRoman(6));
+        assertEquals("VII", n.convertToRoman(7));
+        assertEquals("VIII", n.convertToRoman(8));
+        assertEquals("X", n.convertToRoman(10));
+        assertEquals("IX", n.convertToRoman(9));
+        assertEquals("XI", n.convertToRoman(11));
+        assertEquals("XII", n.convertToRoman(12));
+        assertEquals("XIII", n.convertToRoman(13));
+        assertEquals("XIV", n.convertToRoman(14));
+        assertEquals("XV", n.convertToRoman(15));
+        assertEquals("XVI", n.convertToRoman(16));
+        assertEquals("XVII", n.convertToRoman(17));
+        assertEquals("XVIII", n.convertToRoman(18));
+        assertEquals("XIX", n.convertToRoman(19));
+        assertEquals("XX", n.convertToRoman(20));
+        assertEquals("XXI", n.convertToRoman(21));
+        assertEquals("XXII", n.convertToRoman(22));
+        assertEquals("XXIII", n.convertToRoman(23));
+        assertEquals("XXIV", n.convertToRoman(24));
+        assertEquals("XXV", n.convertToRoman(25));
+        assertEquals("XXVI", n.convertToRoman(26));
+        assertEquals("XXVII", n.convertToRoman(27));
+        assertEquals("XXVIII", n.convertToRoman(28));
+        assertEquals("XXIX", n.convertToRoman(29));
+        assertEquals("XXX", n.convertToRoman(30));
+        assertEquals("XXXI", n.convertToRoman(31));
+        assertEquals("XXXIV", n.convertToRoman(34));
+        assertEquals("XXXV", n.convertToRoman(35));
+        assertEquals("XXXVI", n.convertToRoman(36));
+        assertEquals("XXXVIII", n.convertToRoman(38));
+        assertEquals("XXXIX", n.convertToRoman(39));
+        assertEquals("XL", n.convertToRoman(40));
+        assertEquals("XLI", n.convertToRoman(41));
+        assertEquals("XLIII", n.convertToRoman(43));
+        assertEquals("XLIV", n.convertToRoman(44));
+        assertEquals("XLV", n.convertToRoman(45));
+        assertEquals("XLVII", n.convertToRoman(47));
+        assertEquals("XLIX", n.convertToRoman(49));
+        assertEquals("L", n.convertToRoman(50));
+        assertEquals("LI", n.convertToRoman(51));
+        assertEquals("LIV", n.convertToRoman(54));
+        assertEquals("LV", n.convertToRoman(55));
+        assertEquals("LVII", n.convertToRoman(57));
+        assertEquals("LIX", n.convertToRoman(59));
+        assertEquals("LX", n.convertToRoman(60));
+        assertEquals("LXII", n.convertToRoman(62));
+        assertEquals("LXIV", n.convertToRoman(64));
+        assertEquals("LXV", n.convertToRoman(65));
+        assertEquals("LXVII", n.convertToRoman(67));
+        assertEquals("LXIX", n.convertToRoman(69));
+        assertEquals("LXX", n.convertToRoman(70));
+        assertEquals("LXXII", n.convertToRoman(72));
+        assertEquals("LXXIV", n.convertToRoman(74));
+        assertEquals("LXXV", n.convertToRoman(75));
+        assertEquals("LXXVII", n.convertToRoman(77));
+        assertEquals("LXXIX", n.convertToRoman(79));
+        assertEquals("LXXX", n.convertToRoman(80));
+        assertEquals("LXXXII", n.convertToRoman(82));
+        assertEquals("LXXXIV", n.convertToRoman(84));
+        assertEquals("LXXXV", n.convertToRoman(85));
+        assertEquals("LXXXVII", n.convertToRoman(87));
+        assertEquals("LXXXIX", n.convertToRoman(89));
+        assertEquals("XC", n.convertToRoman(90));
+        assertEquals("XCII", n.convertToRoman(92));
+        assertEquals("XCIV", n.convertToRoman(94));
+        assertEquals("XCV", n.convertToRoman(95));
+        assertEquals("XCVII", n.convertToRoman(97));
+        assertEquals("XCIX", n.convertToRoman(99));
+        assertEquals("C", n.convertToRoman(100));
+        assertEquals("CI", n.convertToRoman(101));
+        assertEquals("CXXVI", n.convertToRoman(126));
+        assertEquals("CLI", n.convertToRoman(151));
+        assertEquals("CLXXVI", n.convertToRoman(176));
+        assertEquals("CIV", n.convertToRoman(104));
+        assertEquals("CXXIX", n.convertToRoman(129));
+        assertEquals("CLIV", n.convertToRoman(154));
+        assertEquals("CLXXIX", n.convertToRoman(179));
+        assertEquals("CIX", n.convertToRoman(109));
+        assertEquals("CX", n.convertToRoman(110));
+        assertEquals("CXXXIV", n.convertToRoman(134));
+        assertEquals("CXXXV", n.convertToRoman(135));
+        assertEquals("CXL", n.convertToRoman(140));
+        assertEquals("CXLV", n.convertToRoman(145));
+        assertEquals("CL", n.convertToRoman(150));
+        assertEquals("CXC", n.convertToRoman(190));
+        assertEquals("CXCIX", n.convertToRoman(199));
+        assertEquals("CC", n.convertToRoman(200));
+        assertEquals("CCLXXVIII", n.convertToRoman(278));
+        assertEquals("CCLXXXVIII", n.convertToRoman(288));
+        assertEquals("CCXCVIII", n.convertToRoman(298));
+        assertEquals("CCXLIX", n.convertToRoman(249));
+        assertEquals("CCCLXXXIX", n.convertToRoman(389));
+        assertEquals("CCCXCIII", n.convertToRoman(393));
+        assertEquals("CCCXLVII", n.convertToRoman(347));
+        assertEquals("CD", n.convertToRoman(400));
+        assertEquals("CDXXVI", n.convertToRoman(426));
+        assertEquals("CDLX", n.convertToRoman(460));
+        assertEquals("CDXCV", n.convertToRoman(495));
+        assertEquals("DXXVI", n.convertToRoman(526));
+        assertEquals("DLXXXIX", n.convertToRoman(589));
+        assertEquals("DC", n.convertToRoman(600));
+        assertEquals("DCLXIX", n.convertToRoman(669));
+        assertEquals("DCCXXXIV", n.convertToRoman(734));
+        assertEquals("DCCXC", n.convertToRoman(790));
+        assertEquals("DCCCLI", n.convertToRoman(851));
+        assertEquals("DCCCXC", n.convertToRoman(890));
+        assertEquals("DCCCXCIX", n.convertToRoman(899));
+        assertEquals("CM", n.convertToRoman(900));
+        assertEquals("CMLI", n.convertToRoman(951));
+        assertEquals("CMLXXXVIII", n.convertToRoman(988));
+        assertEquals("CMLXXI", n.convertToRoman(971));
+        assertEquals("CMXCIX", n.convertToRoman(999));
 
-    @Test
-    public void convertThreeToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(3);
-        assertEquals("III", roman);
-    }
-
-    @Test
-    public void convertFiveToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(5);
-        assertEquals("V", roman);
-    }
-
-    @Test
-    public void convertFourToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(4);
-        assertEquals("IV", roman);
-    }
-
-    @Test
-    public void convertSixToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(6);
-        assertEquals("VI", roman);
-    }
-
-    @Test
-    public void convertSevenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(7);
-        assertEquals("VII", roman);
-    }
-
-    @Test
-    public void convertEightToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(8);
-        assertEquals("VIII", roman);
-    }
-
-    @Test
-    public void convertTenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(10);
-        assertEquals("X", roman);
-    }
-
-    @Test
-    public void convertNineToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(9);
-        assertEquals("IX", roman);
-    }
-
-    @Test
-    public void convertElevenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(11);
-        assertEquals("XI", roman);
-    }
-
-    @Test
-    public void convertTwelveToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(12);
-        assertEquals("XII", roman);
-    }
-
-    @Test
-    public void convertThirteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(13);
-        assertEquals("XIII", roman);
-    }
-
-    @Test
-    public void convertFourteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(14);
-        assertEquals("XIV", roman);
-    }
-
-    @Test
-    public void convertFifteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(15);
-        assertEquals("XV", roman);
-    }
-
-    @Test
-    public void convertSixteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(16);
-        assertEquals("XVI", roman);
-    }
-
-    @Test
-    public void convertSeventeenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(17);
-        assertEquals("XVII", roman);
-    }
-
-    @Test
-    public void convertEighteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(18);
-        assertEquals("XVIII", roman);
-    }
-
-    @Test
-    public void convertNineteenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(19);
-        assertEquals("XIX", roman);
-    }
-
-    @Test
-    public void convertTwentyToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(20);
-        assertEquals("XX", roman);
-    }
-
-    @Test
-    public void convertTwentyOneToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(21);
-        assertEquals("XXI", roman);
-    }
-
-    @Test
-    public void convertTwentyTwoToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(22);
-        assertEquals("XXII", roman);
-    }
-
-    @Test
-    public void convertTwentyThreeToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(23);
-        assertEquals("XXIII", roman);
-    }
-
-    @Test
-    public void convertTwentyFourToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(24);
-        assertEquals("XXIV", roman);
-    }
-
-    @Test
-    public void convertTwentyFiveToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(25);
-        assertEquals("XXV", roman);
-    }
-
-    @Test
-    public void convertTwentySixToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(26);
-        assertEquals("XXVI", roman);
-    }
-
-    @Test
-    public void convertTwentySevenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(27);
-        assertEquals("XXVII", roman);
-    }
-
-    @Test
-    public void convertTwentyEightToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(28);
-        assertEquals("XXVIII", roman);
-    }
-
-    @Test
-    public void convertTwentyNineToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(29);
-        assertEquals("XXIX", roman);
-    }
-
-    @Test
-    public void convertThirtyToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(30);
-        assertEquals("XXX", roman);
-    }
-
-    @Test
-    public void convertThirtyOneToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(31);
-        assertEquals("XXXI", roman);
-    }
-
-    @Test
-    public void convertThirtyFourToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(34);
-        assertEquals("XXXIV", roman);
-    }
-
-    @Test
-    public void convertThirtyFiveToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(35);
-        assertEquals("XXXV", roman);
-    }
-
-    @Test
-    public void convertThirtySixToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(36);
-        assertEquals("XXXVI", roman);
-    }
-
-    @Test
-    public void convertThirtyEightToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(38);
-        assertEquals("XXXVIII", roman);
-    }
-
-    @Test
-    public void convertThirtyNineToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(39);
-        assertEquals("XXXIX", roman);
-    }
-
-    @Test
-    public void convertFortyToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(40);
-        assertEquals("XL", roman);
-    }
-
-    @Test
-    public void convertFortyOneToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(41);
-        assertEquals("XLI", roman);
-    }
-
-    @Test
-    public void convertFortyThreeToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(43);
-        assertEquals("XLIII", roman);
-    }
-
-    @Test
-    public void convertFortyFourToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(44);
-        assertEquals("XLIV", roman);
-    }
-
-    @Test
-    public void convertFortyFiveToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(45);
-        assertEquals("XLV", roman);
-    }
-
-    @Test
-    public void convertFortySevenToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(47);
-        assertEquals("XLVII", roman);
-    }
-
-    @Test
-    public void convertFortyNineToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(49);
-        assertEquals("XLIX", roman);
-    }
-
-    @Test
-    public void convertFiftyToRoman() {
-        Number n = new Number();
-        String roman = n.convertToRoman(50);
-        assertEquals("L", roman);
     }
 }
