@@ -21,8 +21,7 @@ public class Number {
         if (romansMap.containsKey(n))
             return String.valueOf(romansMap.get(n));
 
-        int numberOfDigits = getNumberOfDigits(n);
-        int placeValueFactor = (int) Math.pow(10.0, (double) (numberOfDigits - 1));
+        int placeValueFactor = getPlaceValueFactor(n);
 
         if (romansMap.containsKey(n + placeValueFactor))
             return convertToRoman(placeValueFactor) + convertToRoman(n + placeValueFactor);
@@ -46,6 +45,11 @@ public class Number {
         }
 
         return numberOfDigits;
+    }
+
+    private int getPlaceValueFactor(int n) {
+        int numberOfDigits = getNumberOfDigits(n);
+        return (int) Math.pow(10.0, (double) (numberOfDigits - 1));
     }
 
     private int getNearestMax(int n) {
