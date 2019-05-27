@@ -1,3 +1,4 @@
+package roman;
 
 public class Number {
 
@@ -25,6 +26,22 @@ public class Number {
             else
                 return convertToRoman(n - (n % nearestMax)) + convertToRoman(n % nearestMax);
         }
+    }
+
+    int convertFromRoman(String roman) {
+        int sum = 0;
+        int lastVal = Integer.MAX_VALUE;
+
+        for (Character val : roman.toCharArray()) {
+            int num = Constants.numericMap.get(val);
+
+            if(num > lastVal)
+                sum -= 2 * lastVal;
+            sum += num;
+
+            lastVal = num;
+        }
+        return sum;
     }
 
 
