@@ -141,8 +141,6 @@ public class NumberTest {
         assertEquals(2, n.convertFromRoman("II"));
         assertEquals(3, n.convertFromRoman("III"));
         assertEquals(4, n.convertFromRoman("IV"));
-
-
         assertEquals(6, n.convertFromRoman("VI"));
         assertEquals(7, n.convertFromRoman("VII"));
         assertEquals(8, n.convertFromRoman("VIII"));

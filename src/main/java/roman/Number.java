@@ -37,8 +37,8 @@ public class Number {
 
             if(num > lastVal)
                 sum -= 2 * lastVal;
-            sum += num;
 
+            sum += num;
             lastVal = num;
         }
         return sum;
